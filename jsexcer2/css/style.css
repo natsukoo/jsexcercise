@@ -1,0 +1,71 @@
+ * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    .wrap {
+        margin: 40px;
+    }
+    
+    h3 {
+        margin-bottom: 10px;
+    }
+    
+    .calculate {
+        width: 362px;
+        height: 251px;
+        border-radius: 5px;
+        overflow: hidden;
+        background: #262626;
+    }
+    
+    .pannel {
+        display: block;
+        padding: 8px;
+        height: 35px;
+        color: #fff;
+        text-align: right;
+        font-size: 35px;
+        line-height: 40px;
+    }
+    
+    .key {
+        width: 100%;
+        padding-left: 3px;
+    }
+    
+    .btn {
+        width: 84px;
+        height: 38px;
+        background: #626262;
+        color: #fff;
+        font-size: 15px;
+        margin: 1px;
+        border: none;
+    }
+    
+    .btn:active {
+        opacity: 0.3;
+    }
+    
+    .btn:focus {
+        outline: none;
+    }
+    
+    .col-2 {
+        width: 174px;
+    }
+    
+    .side {
+        background: #ff9809;
+    }
+    /*想同mac上的，知道按了其他运算符样式才被移走。focus显然不能完全满足要求*/
+    
+    .side:focus {
+        border: 1px solid #fff;
+    }
+    /*部分功能暂时没有实现，所以采用了禁用样式*/
+    
+    button[disabled] {
+        cursor: not-allowed;
+    }

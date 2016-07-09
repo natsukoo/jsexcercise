@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>简易计算器</title>
+    <style type="text/css">
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    .wrap {
+        margin: 40px;
+    }
+    
+    h3 {
+        margin-bottom: 10px;
+    }
+    
+    .calculate {
+        width: 343px;
+        height: 251px;
+        border-radius: 5px;
+        overflow: hidden;
+        background: #262626;
+    }
+    
+    .pannel {
+        display: block;
+        padding: 8px;
+        height: 35px;
+        color: #fff;
+        text-align: right;
+        font-size: 35px;
+        line-height: 40px;
+    }
+    
+    .key {
+        width: 100%;
+        padding-left: 3px;
+    }
+    
+    .btn {
+        width: 84px;
+        height: 38px;
+        background: #626262;
+        color: #fff;
+        font-size: 15px;
+        margin: 1px;
+        margin-left: -3px;
+        border: none;
+    }
+    
+    .btn:active {
+        opacity: 0.3;
+    }
+    
+    .btn:focus {
+        outline: none;
+    }
+    
+    .col-2 {
+        width: 170px;
+    }
+    
+    .side {
+        background: #ff9809;
+    }
+    /*想同mac上的，知道按了其他运算符样式才被移走。focus显然不能完全满足要求*/
+    
+    .side:focus {
+        border: 1px solid #fff;
+    }
+    /*部分功能暂时没有实现，所以采用了禁用样式*/
+    
+    button[disabled] {
+        cursor: not-allowed;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <h3>简易计算器</h3>
+        <div class="calculate">
+            <label class="pannel" id="pannel">0</label>
+            <div class="key">
+                <button class="btn" id="backspace">c</button>
+                <button class="btn" value="inversion" disabled="disabled">+/-</button>
+                <button class="btn" value="%">%</button>
+                <button class="btn side" value="/">&#247;</button>
+                <button class="btn" value="7">7</button>
+                <button class="btn" value="8">8</button>
+                <button class="btn" value="9">9</button>
+                <button class="btn side" value="*">&#215;</button>
+                <button class="btn" value="4">4</button>
+                <button class="btn" value="5">5</button>
+                <button class="btn" value="6" id="ceshi">6</button>
+                <button class="btn side" value="-">－</button>
+                <button class="btn" value="1">1</button>
+                <button class="btn" value="2">2</button>
+                <button class="btn" id="ceshi" value="3">3</button>
+                <button class="btn side" value="+">＋</button>
+                <button class="btn col-2" value="0">0</button>
+                <button class="btn" value="dot" disabled="disabled">.</button>
+                <button class="btn side" value="=">=</button>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+    var num = [];
+    var flag;
+    var num1 = "";
+    var result = 0;
+
+
+    // 此处得到的是一个关于button的集合。数组。分别给每一个键的点击获取到相应的value值
+    //本来想用一个函数返回值，但是一旦加入到函数内部就取不出来了。所以这个方法
+    var a = document.getElementsByTagName("button");
+    for (var i = a.length - 1; i >= 0; i--) {
+        a[i].addEventListener("click", function() {
+            var j = this.value;
+            if (!isNaN(j)) {
+                num.push(j);
+            } else if (j == "/" || j == "*" || j == "+" || j == "-" || j == "%") {
+                flag = j;
+                if (num.length != 0) {
+                num1 = num.join(""); 
+                };//本来是join（）没有加双引号然后就一直输出带有逗号的字符串。加了就好了
+                num.length = 0;
+            } else if (j == "=") {
+                if (flag == "/") {
+                    result = Number(num1) / Number(num.join(""));
+                } else if (flag == "+"){
+                    result = Number(num1) + Number(num.join(""));
+                } else if (flag == "-"){
+                    result = Number(num1) - Number(num.join(""));
+                } else if (flag == "*"){
+                    result = Number(num1) * Number(num.join(""));
+                } else if (flag == "%"){
+                    result = Number(num1) % Number(num.join(""));
+                }
+                num.length = 0;
+                num1 = result;
+
+            };
+
+            console.log("获取的数组"+num);
+            console.log("想用的数字"+num1);
+            console.log("结果"+result);
+        })
+
+    };
+
+    </script>
+</body>
+
+</html>
