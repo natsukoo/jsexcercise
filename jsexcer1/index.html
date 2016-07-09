@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>判断等级</title>
+    <style type="text/css">
+    .page {
+        height: 100%;
+        width: 100%;
+    }
+    
+    .wrap {
+        width: 300px;
+        margin: 20px;
+    }
+    
+    .instruction {
+        margin-bottom: 10px;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="page">
+        <div class="wrap">
+            <div class="instruction">
+                <h1>问题说明</h1> 将0-100分学员分已10为分界,10分为一段，然后计算出该生为数字几等生，如98分为90-100为1等生，65分为60-70为4等生。
+            </div>
+            <div class="container">
+                <input type="text" id="score" placeholder="请输入该学员的分数">
+                <input type="submit" id="check" value="check" onclick="checkOut(document.getElementById('score').value)" />
+                <p id="result">结果显示</p>
+            </div>
+        </div>
+    </div>
+    <script src="js/asset.js">
+    
+    </script>
+</body>
+
+</html>
