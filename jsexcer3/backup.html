@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+
+<body>
+    <div class="page">
+        <h4>找到数组["a","x","b","d","m","a","k","m","p","j","a"]出现最多的字母并给出个数和每一个所在的顺序。</h4>
+    </div>
+    <script type="text/javascript">
+    var arr = ["a", "x", "b", "d", "m", "a", "k", "m", "p", "j", "a", "j", "a"];
+    var test = [];
+    var flag = arr.length;
+
+ 
+    for (var i = flag - 1; i >= 0; i--) {
+        var str = arr.pop();
+        if (!test.length) {
+            //这个判断时判断test是否为空，为空的话需要开辟新的空间
+            test.length += 1;
+            test[0] = [];
+            test[0].push(str);
+            test[0].push(i);
+        } else {
+            var len = test.length;
+            //即便循环到这里 test[0][0]是存在的，这个因为j的原因也会说undefined。。好奇怪。
+            //for (var j = len- 1; j>=0,test[j][0] != str; j--) {
+            for (var j = len - 1; j >= 0; j--) {
+                if (test[j][0] == str) break;
+                //w看权威指南说js函数里面没有块作用域，所以当test[j][0]和str相等的时候，便跳出循环，同时j的值仍然保留在相等的那个数组的位置上。	
+                //假如j>=0的时候就退出了for循环那么，说明找到了一样的值，直接将i的值push给test[j]
+                //倘若j<0则说明没有找到，那么需要新开一个单元来把该str给push到test的最后一个的第0个位置，把arr的长度push到后面去
+            }
+            if (j >= 0) {
+                test[j].push(i);
+                if (i == 0) {
+                    console.log("输出的test值" + test);
+                    document.write("输出的test值" + test)
+                }
+            } else {
+                len++;
+                test[len - 1] = [];
+                test[len - 1].push(str);
+                test[len - 1].push(i);
+
+            };
+        }
+
+    };
+    </script>
+</body>
+
+</html>
