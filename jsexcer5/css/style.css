@@ -1,0 +1,216 @@
+html,
+body,
+div,
+figure,
+figcaption,
+img,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    font-size: 0;
+    width: 1120px;
+    margin: 0 auto;
+    position: relative;
+}
+
+
+/*公共的样式*/
+
+figure {
+    padding: 5px;
+    width: 195px;
+    outline: 1px solid #eee;
+    box-shadow: 0 1px 1px 2px rgba(180, 180, 180, 0.6);
+    margin: 5px;
+    display: inline-block;
+    vertical-align: top;
+    border-radius: 5px;
+    background-color: #bbb;
+    position: relative;
+    overflow: hidden;
+}
+
+figure:hover {
+    cursor: pointer;
+}
+
+figure img {
+    width: 195px;
+    height: auto;
+    opacity: 0.8;
+    transition: all 0.35s;
+}
+
+figure:hover img {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+figcaption {
+    position: absolute;
+    left: 0;
+    top: 0;
+    text-align: center;
+}
+
+figcaption h2 {
+    background: inherit;
+    color: #fff;
+    margin: 5px;
+    padding: 5px;
+    font-size: 16px;
+}
+
+figcaption p {
+    background: #fff;
+    color: #333;
+    margin: 2px;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+p,
+h2,
+div {
+    transition: all 0.35s;
+}
+
+
+/*test1样式*/
+
+.test1 figcaption {
+    top: 130px;
+    left: 15px;
+}
+
+.test1 figcaption h2 {
+    transform: translate(0, 0);
+}
+
+.test1 figcaption p {
+    transform: translate(-120px, 0px);
+}
+
+
+/*分别设置的三个小样式*/
+
+.test1 figcaption p:nth-of-type(1) {
+    transition-delay: 0.05s;
+}
+
+.test1 figcaption p:nth-of-type(2) {
+    transition-delay: 0.1s;
+}
+
+.test1 figcaption p:nth-of-type(3) {
+    transition-delay: 0.15s;
+}
+
+.test1:hover figcaption h2 {
+    transform: translate(5px, 0px);
+}
+
+.test1:hover figcaption p {
+    transform: translate(0px, 0px);
+}
+
+
+/*test2样式*/
+
+.test2 figcaption {
+    top: 25px;
+    left: 20px;
+}
+
+.test2 figcaption div {
+    border: 1px solid #fff;
+    width: 160px;
+    height: 85px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(0, -120px) rotate(0deg);
+}
+
+.test2 figcaption p {
+    background: inherit;
+    color: #fff;
+    font-size: 10px;
+    transform: translate(0, 50px);
+    opacity: 0;
+}
+
+.test2:hover figcaption p {
+    transform: translate(0, 0);
+    opacity: 1;
+}
+
+.test2:hover figcaption div {
+    transform: translate(0, 0) rotate(360deg);
+}
+
+
+/*test3*/
+
+.test3 figcaption {
+    top: 15px;
+    left: 10px;
+}
+
+.test3 figcaption h2 {
+    transform: skew(90deg);
+}
+
+.test3 figcaption p {
+    background: inherit;
+    color: #fff;
+    transform: skew(90deg);
+    transition-delay: 0.1s;
+}
+
+.test3:hover figcaption h2,
+.test3:hover figcaption p {
+    transform: skew(0);
+}
+
+
+/*test4样式*/
+
+.test4 figcaption {
+    top: 20px;
+    left: 15px;
+}
+
+.test4 figcaption h2 {
+    opacity: 0;
+}
+
+.test4 figcaption p {
+    background: inherit;
+    color: #fff;
+    opacity: 0;
+}
+
+.test4 figcaption div {
+    left: -10px;
+    top: 0;
+    position: absolute;
+    border: 1px solid #fff;
+    width: 190px;
+    height: 85px;
+    opacity: 0;
+}
+
+.test4:hover figcaption div {
+    transform: scale(0.9);
+    opacity: 1;
+}
+
+.test4:hover figcaption h2,
+.test4:hover figcaption p {
+    opacity: 1;
+    transform: scale(0.9);
+}
