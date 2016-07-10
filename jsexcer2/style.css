@@ -1,0 +1,97 @@
+ * {
+        margin: 0;
+        padding: 0;
+        border: none;
+    }
+    
+    html,
+    body {
+        background-color: #7d7c7d;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .container {
+        width: 100%;
+        height: 100%;
+        min-width: 500px;
+        min-height: 350px;
+        position: relative;
+    }
+    
+    .calcu {
+        width: 480px;
+        height: 330px;
+        padding: 10px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -175px;
+        margin-left: -250px;
+        background: #d9dadb;
+        border: 2px solid #4d4e4f;
+        border-radius: 20px;
+        box-shadow: 1px 2px 1px 3px rgba(77, 78, 79, 0.6);
+    }
+    
+    #pannel {
+        width: 420px;
+        height: 30px;
+        font-size: 30px;
+        line-height: 35px;
+        text-align: right;
+        background-color: #bdbca5;
+        padding: 5px;
+        display: block;
+        margin: 0 auto;
+        margin-top: 15px;
+        border-style: solid;
+        border-color: #000;
+        border-top-width: 6px;
+        border-left-width: 8px;
+        border-right-width: 8px;
+        border-bottom-width: 6px;
+        box-shadow: -1px -1px 4px 2px rgba(77, 78, 79, 0.6), inset 4px 2px 10px 1px rgba(150, 150, 150, 0.5);
+        border-radius: 10px;
+    }
+    
+    .key {
+        width: 445px;
+        margin: 10px auto;
+    }
+    
+    .btn {
+        width: 78px;
+        height: 45px;
+        margin: 2px;
+        border: 1px solid #000;
+        background: #858687;
+        border-radius: 5px;
+        font-size: 20px;
+        color: #fff;
+        line-height: 35px;
+        vertical-align: middle;
+        box-shadow: inset 0px 2px 0 1px rgba(248, 248, 248, 0.4);
+    }
+    
+    .btn:focus {
+        border: 2px solid rgba(50, 52, 50, 0.7);
+        box-shadow: inset 0px 0 0 1px rgba(248, 248, 248, 0.8);
+        outline: none;
+    }
+    
+    .left_k {
+        width: 260px;
+        display: inline-block;
+    }
+    
+    .right_k {
+        width: 170px;
+        float: right;
+    }
+    
+    .equal {
+        background: #eb7a46;
+        font-size: 30px;
+        line-height: 20px;
+    }
